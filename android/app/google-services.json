@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "270139328442",
+    "project_id": "tis-analyzer",
+    "storage_bucket": "tis-analyzer.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270139328442:android:80ba99051cd725231b7f83",
+        "android_client_info": {
+          "package_name": "com.example.ftc_analyzer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4HKR4usPp8EYBQB8IwrhK20KKsjXEurE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
