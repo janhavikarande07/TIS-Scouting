@@ -1,4 +1,4 @@
-# ftc_analyzer
+# tis_ftc
 
 A new Flutter project.
 

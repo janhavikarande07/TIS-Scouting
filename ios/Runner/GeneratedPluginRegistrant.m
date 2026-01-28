@@ -36,12 +36,6 @@
 @import path_provider_foundation;
 #endif
 
-#if __has_include(<qr_code_scanner_plus/FlutterQrPlusPlugin.h>)
-#import <qr_code_scanner_plus/FlutterQrPlusPlugin.h>
-#else
-@import qr_code_scanner_plus;
-#endif
-
 @implementation GeneratedPluginRegistrant
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
@@ -50,7 +44,6 @@
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
   [MobileScannerPlugin registerWithRegistrar:[registry registrarForPlugin:@"MobileScannerPlugin"]];
   [PathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"PathProviderPlugin"]];
-  [FlutterQrPlusPlugin registerWithRegistrar:[registry registrarForPlugin:@"FlutterQrPlusPlugin"]];
 }
 
 @end

@@ -1,4 +1,5 @@
 List<Map<String, dynamic>> Edison_Division = [
+  {'team_number': '', 'team_name': '', 'from': ''},
   {'team_number': '130', 'team_name': 'Blazing Spirits', 'from': 'Windsor, CT, USA'} ,
   {'team_number': '3050', 'team_name': 'G-Bots', 'from': 'Las Vegas, NV, USA'} ,
   {'team_number': '3825', 'team_name': 'Ψ Lynx', 'from': 'Anchorage, AK, USA'} ,
@@ -66,6 +67,7 @@ List<Map<String, dynamic>> Edison_Division = [
 ];
 
 List<Map<String, dynamic>> Franklin_Division = [
+  {'team_number': '', 'team_name': '', 'from': ''},
   {'team_number': '252', 'team_name': 'Electric Quahogs', 'from': 'Providence, RI, USA'} ,
   {'team_number': '772', 'team_name': 'Golden Dragons', 'from': 'Hartsville, SC, USA'} ,
   {'team_number': '3747', 'team_name': 'The Hive', 'from': 'Sandy, UT, USA'} ,
@@ -133,6 +135,7 @@ List<Map<String, dynamic>> Franklin_Division = [
 ];
 
 List<Map<String, dynamic>> Jemison_Division = [
+  {'team_number': '', 'team_name': '', 'from': ''},
   {'team_number': '369', 'team_name': 'Oakton Cougar Robotics 369', 'from': 'Vienna, VA, USA'} ,
   {'team_number': '701', 'team_name': 'The GONK Squad', 'from': 'North Kingstown, RI, USA'} ,
   {'team_number': '3188', 'team_name': 'Squiggle Splat Bang', 'from': 'Powell, WY, USA'} ,
@@ -200,6 +203,7 @@ List<Map<String, dynamic>> Jemison_Division = [
 ];
 
 List<Map<String, dynamic>> Ochoa_Division = [
+  {'team_number': '', 'team_name': '', 'from': ''},
   {'team_number': '3954', 'team_name': 'Pink to the Future', 'from': 'Den Haag, ZH, Netherlands'} ,
   {'team_number': '4137', 'team_name': 'IslandBots', 'from': 'East Setauket, NY, USA'} ,
   {'team_number': '4785', 'team_name': 'Anonymous Autonomous', 'from': 'Fresh Meadows, NY, USA'} ,

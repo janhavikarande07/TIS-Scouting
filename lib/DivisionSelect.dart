@@ -1,9 +1,8 @@
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
-import 'HomePage.dart';
-import 'MatchTypeSelect.dart';
-import 'colors.dart';
-import 'values_.dart';
+import 'package:tis_ftc/HomePage.dart';
+import 'package:tis_ftc/colors.dart';
+import 'package:tis_ftc/values_.dart';
 
 class DivisionSelect extends StatefulWidget {
   const DivisionSelect({super.key});
@@ -113,7 +112,7 @@ class _DivisionSelectState extends State<DivisionSelect> {
                }
                else {
                  Navigator.push(context, MaterialPageRoute(
-                     builder: (context) =>MatchTypeSelect()));
+                     builder: (context) =>Home(division: division,)));
                }
              },
              style: ElevatedButton.styleFrom(

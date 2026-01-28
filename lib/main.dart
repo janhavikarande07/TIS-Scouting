@@ -1,47 +1,61 @@
 import 'dart:async';
-
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:tis_ftc/Match.dart';
 
 import 'DivisionSelect.dart';
 import 'HomePage.dart';
-import 'firebase_options.dart';
-import 'login_email.dart';
-import 'Match.dart';
+import 'colors.dart';
 
 late final FirebaseApp app;
 late final FirebaseAuth auth;
 
-Future<void> main() async {
+void main() async { //await and async when the process will take some time to return value so just return a placeholder
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(MatchAdapter());
   await Hive.openBox<Match>("Match");
-  app = await Firebase.initializeApp(options:DefaultFirebaseOptions.currentPlatform);
-  auth = FirebaseAuth.instanceFor(app: app);
-  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
-  runApp(const MyApp());
+  // await Hive.openBox<LocustModel>("project_mynah_synced");
+  // app = await Firebase.initializeApp(options:DefaultFirebaseOptions.currentPlatform);
+  // auth = FirebaseAuth.instanceFor(app: app);
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget{
+  @override
+  State<MyApp> createState() => MyAppState();
+}
+
+class MyAppState extends State<MyApp> {
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    Hive.close();
+    super.dispose();
+  }
+
+  // This widget is the root of your application.
+  @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'TIS Analyzer',
-      home: SplashPage(),
+
+    return MaterialApp(
+      title: 'TIS Scouting',
       debugShowCheckedModeBanner: false,
+      home: SplashPage(),
     );
   }
 }
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -49,28 +63,23 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
 
-  User? user = FirebaseAuth.instance.currentUser;
+  // User? user = FirebaseAuth.instance.currentUser;
 
   @override
   void initState() {
     super.initState();
 
+    // FirebaseAuth.instance.signOut();
+
     Timer(const Duration(seconds: 3),
-            (){
-          if(user == null) {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder:
-                    (context) =>  const LoginPage()
-                )
-            );
-          }
-          else{
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder:
-                    (context) => DivisionSelect()
-                )
-            );
-          }
+            () async {
+
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder:
+                  (context) => DivisionSelect()
+              )
+          );
+          // }
         }
     );
   }
@@ -84,9 +93,17 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: themeColor,
       body: SafeArea(
         child : Center(
-            child: Text("FTC Analyzer", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),)
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("TIS", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: lightThemeColor), textAlign: TextAlign.center,),
+                SizedBox(height: 10,),
+                Text("FTC Scouting", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: lightThemeColor), textAlign: TextAlign.center,),
+              ],
+            )
         ),
       ),
     );
